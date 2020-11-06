@@ -58,16 +58,15 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   @media (max-width: 767px) {
-    margin-top: -30%;
+    margin-top: -26%;
   }
-  @media (max-width: 991px) {
-    margin-top: -25%;
+  @media (min-width: 768px) and (max-width: 991px) {
+    margin-top: -24%;
   }
   .num_404 {
     font-size: 2.5em;
     font-family: 'Cairo', sans-serif;
     font-weight: bold;
-    // color: #fff;
     @media (max-width: 767px) {
       font-size: 2em;
     }
@@ -78,9 +77,11 @@ body {
     text-transform: capitalize;
     font-family: 'Cairo', sans-serif;
     letter-spacing: 1px;
-    // color: #fff;
     @media (max-width: 767px) {
       font-size: 1.5em;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 1.6em;
     }
   }
   .message {
@@ -90,19 +91,21 @@ body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.4;
     font-size: 0.9em;
-    // color: #fff;
     @media (max-width: 767px) {
       font-size: 0.7em;
       width: 250px;
       margin: auto;
       margin-bottom: 15px;
     }
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 0.8em;
+      width: 250px;
+    }
   }
+
   .btn_home {
     width: 100px;
     border: 1px solid #666;
-    // border: 1px solid #fff;
-    // color: #fff;
     padding: 10px;
     text-transform: capitalize;
     border-radius: 100px;
@@ -114,7 +117,6 @@ body {
 
 footer {
   box-shadow: 0 10px 15px #444;
-  // box-shadow: 0 10px 15px #fff;
   .content {
     width: 100%;
     max-width: 1040px;
@@ -122,6 +124,9 @@ footer {
     .box {
       display: flex;
       text-align: center;
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
       .one {
         flex: 1;
         margin-top: 5%;
@@ -139,6 +144,10 @@ footer {
       .langs {
         flex: 1;
         margin-top: 5%;
+        @media (max-width: 767px) {
+          flex-direction: column;
+          margin-top: 8px;
+        }
         .en {
           @extend .btn;
         }
@@ -151,11 +160,42 @@ footer {
       }
       .img {
         flex: 1;
+        @media (max-width: 767px) {
+          margin-top: 10px;
+        }
         img {
           width: 150px;
           height: 150px;
         }
       }
     }
+  }
+}
+
+#big_circle {
+  position: relative;
+  // animation: move 3s linear infinite alternate;
+}
+
+#circle_white {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  animation: move 3s linear infinite alternate;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: translate(350px);
+  }
+  50% {
+    transform: translateY(450px);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }

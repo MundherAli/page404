@@ -67,13 +67,13 @@
 
 @media (max-width: 767px) {
   .text_inner {
-    margin-top: -30%;
+    margin-top: -26%;
   }
 }
 
-@media (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .text_inner {
-    margin-top: -25%;
+    margin-top: -24%;
   }
 }
 
@@ -103,6 +103,12 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .text_inner .wrong {
+    font-size: 1.6em;
+  }
+}
+
 .text_inner .message {
   width: 400px;
   margin: auto;
@@ -118,6 +124,13 @@
     width: 250px;
     margin: auto;
     margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .text_inner .message {
+    font-size: 0.8em;
+    width: 250px;
   }
 }
 
@@ -150,6 +163,15 @@ footer .content .box {
   text-align: center;
 }
 
+@media (max-width: 767px) {
+  footer .content .box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 footer .content .box .one {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -174,14 +196,80 @@ footer .content .box .langs {
   margin-top: 5%;
 }
 
+@media (max-width: 767px) {
+  footer .content .box .langs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 8px;
+  }
+}
+
 footer .content .box .img {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
+@media (max-width: 767px) {
+  footer .content .box .img {
+    margin-top: 10px;
+  }
+}
+
 footer .content .box .img img {
   width: 150px;
   height: 150px;
+}
+
+#big_circle {
+  position: relative;
+}
+
+#circle_white {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  -webkit-animation: move 3s linear infinite alternate;
+          animation: move 3s linear infinite alternate;
+}
+
+@-webkit-keyframes move {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: translate(350px);
+            transform: translate(350px);
+  }
+  50% {
+    -webkit-transform: translateY(450px);
+            transform: translateY(450px);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes move {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: translate(350px);
+            transform: translate(350px);
+  }
+  50% {
+    -webkit-transform: translateY(450px);
+            transform: translateY(450px);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 /*# sourceMappingURL=style.css.map */
